@@ -2,7 +2,7 @@ from algorithm import isSorted, SortOrder; export SortOrder
 from sequtils import delete, toSeq
 
 proc stalinSort*(a: var seq[any], order: SortOrder = Ascending) =
-  ## StalinSort equivalent of the``algorithm.sort()`` proc.
+  ## StalinSort equivalent of the ``algorithm.sort()`` proc.
   ## Modifies the ``var seq[T]`` directly.
   ## 
   ## Big O is guaranteed to be O(n).
@@ -27,7 +27,7 @@ proc stalinSort*(a: var seq[any], order: SortOrder = Ascending) =
   a = b
 
 proc stalinSorted*[T](a: openArray[T], order: SortOrder = Ascending): seq[T] =
-  ## StalinSort equivalent of the``algorithm.sorted()`` proc.
+  ## StalinSort equivalent of the ``algorithm.sorted()`` proc.
   ## Returns the sorted ``openArray[T]``.
   ## 
   ## Big O is guaranteed to be O(n).

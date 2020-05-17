@@ -1,5 +1,5 @@
 # Package
-version = "0.2.1"
+version = "0.2.2"
 author = "Knaque"
 description = "A Nim implementation of the Stalin Sort algorithm."
 license = "CC0-1.0"
