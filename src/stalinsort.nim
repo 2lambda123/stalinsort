@@ -40,3 +40,18 @@ proc stalinSorted*[T](a: openArray[T], order: SortOrder = Ascending): seq[T] =
 
     assert y.stalinSorted(Descending) == @["boo", "barr"]
   result = a.toSeq(); result.stalinSort(order)
+
+proc isStalinSorted*(a: openArray[any], order: SortOrder = Ascending): bool =
+  ## StalinSort equivalent of the ``algorithm.isSorted()`` proc.
+  ## Returns ``true`` if sorted, otherwise ``false``.
+  ## 
+  ## Big O is guaranteed to be O(n).
+  ## 
+  ## Sort order defaults to ``Ascending``.
+  runnableExamples:
+    var x, y = @["boo", "fo", "barr", "qux"]
+
+    assert x.stalinSorted() == @["boo", "fo", "qux"]
+
+    assert y.stalinSorted(Descending) == @["boo", "barr"]
+  a == a.stalinSorted(order)
