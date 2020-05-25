@@ -49,9 +49,9 @@ proc isStalinSorted*(a: openArray[any], order: SortOrder = Ascending): bool =
   ## 
   ## Sort order defaults to ``Ascending``.
   runnableExamples:
-    var x, y = @["boo", "fo", "barr", "qux"]
+    var x = @["boo", "fo", "qux"]
+    
+    assert x.isStalinSorted()
 
-    assert x.stalinSorted() == @["boo", "fo", "qux"]
-
-    assert y.stalinSorted(Descending) == @["boo", "barr"]
+    assert not x.isStalinSorted(Descending)
   a == a.stalinSorted(order)
