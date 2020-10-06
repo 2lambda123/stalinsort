@@ -1,7 +1,7 @@
 from algorithm import isSorted, SortOrder; export SortOrder
 from sequtils import delete, toSeq
 
-proc stalinSort*(a: var seq[any], order: SortOrder = Ascending) =
+proc stalinSort*[T](a: var seq[T], order: SortOrder = Ascending) =
   ## StalinSort equivalent of the ``algorithm.sort()`` proc.
   ## Modifies the ``var seq[T]`` directly.
   ## 
@@ -41,7 +41,7 @@ proc stalinSorted*[T](a: openArray[T], order: SortOrder = Ascending): seq[T] =
     assert y.stalinSorted(Descending) == @["boo", "barr"]
   result = a.toSeq(); result.stalinSort(order)
 
-proc isStalinSorted*(a: openArray[any], order: SortOrder = Ascending): bool =
+proc isStalinSorted*[T](a: openArray[T], order: SortOrder = Ascending): bool =
   ## StalinSort equivalent of the ``algorithm.isSorted()`` proc.
   ## Returns ``true`` if sorted, otherwise ``false``.
   ## 
